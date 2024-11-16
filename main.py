@@ -13,4 +13,5 @@ print("If your guess is farther than your most recent guess, I'll say you're get
 print("If your guess is closer than your most recent guess, I'll say you're getting WARMER")
 print("LET'S PLAY!")
 
-
+# Create a list to store quesses
+guess_list = [0]
