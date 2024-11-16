@@ -15,7 +15,7 @@ print("If your guess is closer than your most recent guess, I'll say you're gett
 print("LET'S PLAY!")
 
 # Create a list to store guesses
-guess_list = []
+guess_list = [0]
 
 # Create a while loop
 while True:
@@ -26,16 +26,25 @@ while True:
         print("Out of Bounds! Please try again: ")
         continue
 
-    # Add guess to the guesses list
-    guess_list.append(guess)
-
     # Compare player's guess to our random number
     if guess == random_number:
         print(f"Congratulations you guessed it in only {len(guess_list)} guesses!")
         break
 
-    # Check if player's guess is within 10
-    if abs(random_number - guess) <= 10:
-        print("WARM!")
+    # Add guess to the guesses list
+    guess_list.append(guess)
+
+
+    if guess_list[-2]:
+        # Check if guess is better that previous guess
+        if abs(random_number - guess) < abs(random_number - guess_list[-2]):
+            print("WARMER!")
+        else:
+            print("COLDER!")
+
     else:
-        print("COLD!")
+        # Check if player's guess is within 10
+        if abs(random_number - guess) <= 10:
+            print("WARM!")
+        else:
+            print("COLD!")
