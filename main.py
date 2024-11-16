@@ -15,14 +15,23 @@ print("If your guess is closer than your most recent guess, I'll say you're gett
 print("LET'S PLAY!")
 
 # Create a list to store quesses
-guess_list = [0]
+guess_list = []
 
-# Create a while loop that asks for a valid guess
+# Create a while loop
 while True:
     guess = int(input("Please provide your guess: "))
 
+    # Check if guess is valid
     if guess < 1 or guess > 100:
         print("Out of Bounds! Please try again: ")
         continue
-    break
+
+    # Add guess to the guesses list
+    guess_list.append(guess)
+
+    # Compare player's guess to our random number
+    if guess == random_number:
+        print(f"Congratulations you guessed it in only {len(guess_list)} guesses!")
+
+
 
