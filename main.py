@@ -3,6 +3,7 @@ import random
 
 # Create a variable that will hold random number
 random_number = random.randint(1,100)
+print(random_number)
 
 # Print introduction to the game and explain the rules
 print("WELCOME TO GUESS ME!")
@@ -15,3 +16,13 @@ print("LET'S PLAY!")
 
 # Create a list to store quesses
 guess_list = [0]
+
+# Create a while loop that asks for a valid guess
+while True:
+    guess = int(input("Please provide your guess: "))
+
+    if guess < 1 or guess > 100:
+        print("Out of Bounds! Please try again: ")
+        continue
+    break
+
